@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-ENV APP_LANDING_PAGE_VERSION 0.1.0-b76ca4b
+ENV APP_LANDING_PAGE_VERSION 8884e65
 
 RUN wget -q https://github.com/viblo-asia/app-landing-page/releases/download/$APP_LANDING_PAGE_VERSION/dist.zip
 RUN mkdir -p /var/www/app
