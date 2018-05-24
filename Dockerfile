@@ -3,7 +3,7 @@ FROM nginx:alpine
 WORKDIR /var/www
 
 ENV APP_LANDING_PAGE_VERSION 8884e65
-ENV TOOLS_LANDING_PAGE_VERSION a6c9073
+ENV TOOLS_LANDING_PAGE_VERSION v1.0.0
 
 RUN wget -q https://github.com/viblo-asia/app-landing-page/releases/download/$APP_LANDING_PAGE_VERSION/dist.zip
 RUN mkdir -p /var/www/app
