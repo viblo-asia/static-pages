@@ -19,6 +19,7 @@ RUN mkdir -p /var/www/careers
 RUN unzip dist.zip -d /var/www/careers && rm dist.zip
 
 COPY nginx.conf /etc/nginx
+COPY error.html /var/www
 
 CMD nginx -g "daemon off; pid /run/nginx.pid;"
 
