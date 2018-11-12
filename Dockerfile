@@ -23,6 +23,8 @@ RUN wget -q https://github.com/viblo-asia/careers/releases/download/$CAREERS_PAG
 
 COPY nginx.conf /etc/nginx
 COPY error.html /var/www
+COPY maintain.html /var/www
+ADD assets /var/www/assets
 
 CMD nginx -g "daemon off; pid /run/nginx.pid;"
 
