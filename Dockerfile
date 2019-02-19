@@ -22,7 +22,7 @@ RUN wget -q https://github.com/viblo-asia/careers/releases/download/$CAREERS_PAG
     && unzip dist.zip -d /var/www/careers \
     && rm dist.zip
 
-ENV ORGANIZATION_PAGE_VERSION v1.0.4
+ENV ORGANIZATION_PAGE_VERSION v1.0.5
 RUN wget -q https://github.com/viblo-asia/organization-landing-page/releases/download/$ORGANIZATION_PAGE_VERSION/dist.zip \
     && mkdir -p /var/www/organization-feature \
     && unzip dist.zip -d /var/www/organization-feature \
