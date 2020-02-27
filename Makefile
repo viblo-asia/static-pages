@@ -1,11 +1,13 @@
 TAG ?= latest
 CHANNEL ?= latest
-IMAGE := viblo/static-pages:$(CHANNEL)
+IMAGE := viblo/static-pages
 
 .PHONY: build push
 
 build:
-	docker build . --tag $(IMAGE)
+	docker build . --tag $(IMAGE):$(CHANNEL)
 
-push:
-	docker push $(IMAGE)
+release:
+	docker tag $(IMAGE):$(CHANNEL) $(IMAGE):$(TAG)
+	docker push $(IMAGE):$(TAG)
+	docker push $(IMAGE):$(CHANNEL)
