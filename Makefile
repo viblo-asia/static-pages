@@ -1,10 +1,11 @@
-RELEASE_CHANNEL ?= latest
-RELEASE_IMAGE := viblo/static-pages:$(RELEASE_CHANNEL)
+TAG ?= latest
+CHANNEL ?= latest
+IMAGE := viblo/static-pages:$(CHANNEL)
 
 .PHONY: build push
 
 build:
-	docker build . --tag $(RELEASE_IMAGE) --build-arg SURVEY_RESULTS_VERSION=$(VERSION)
+	docker build . --tag $(IMAGE)
 
 push:
-	docker push $(RELEASE_IMAGE)
+	docker push $(IMAGE)

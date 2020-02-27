@@ -28,11 +28,17 @@ RUN wget -q https://github.com/viblo-asia/organization-landing-page/releases/dow
     && unzip dist.zip -d /var/www/organization-feature \
     && rm dist.zip
 
-ARG SURVEY_RESULTS_VERSION=v1.0.0-beta.1
+ARG SURVEY_RESULTS_VERSION=v1.0.0-beta.8
 RUN wget -q https://github.com/viblo-asia/survey-results/releases/download/$SURVEY_RESULTS_VERSION/survey-results-$SURVEY_RESULTS_VERSION.zip \
     && mkdir -p /var/www/survey-results \
     && unzip survey-results-$SURVEY_RESULTS_VERSION.zip -d /var/www/survey-results \
     && rm survey-results-$SURVEY_RESULTS_VERSION.zip
+
+ARG VIBLO_PLATFORM_VERSION=v1.0.0-alpha.2
+RUN wget -q https://github.com/viblo-asia/about.viblo.asia/releases/download/$VIBLO_PLATFORM_VERSION/about.viblo.asia-$VIBLO_PLATFORM_VERSION.zip \
+    && mkdir -p /var/www/about.viblo.asia \
+    && unzip about.viblo.asia-$VIBLO_PLATFORM_VERSION.zip -d /var/www/about.viblo.asia \
+    && rm about.viblo.asia-$VIBLO_PLATFORM_VERSION.zip
 
 COPY nginx.conf /etc/nginx
 COPY error.html /var/www
