@@ -34,7 +34,7 @@ RUN wget -q https://github.com/viblo-asia/survey-results/releases/download/$SURV
     && unzip survey-results-$SURVEY_RESULTS_VERSION.zip -d /var/www/survey-results \
     && rm survey-results-$SURVEY_RESULTS_VERSION.zip
 
-ARG VIBLO_PLATFORM_VERSION=v1.0.1
+ARG VIBLO_PLATFORM_VERSION=v1.0.2
 RUN wget -q https://github.com/viblo-asia/about.viblo.asia/releases/download/$VIBLO_PLATFORM_VERSION/about.viblo.asia-$VIBLO_PLATFORM_VERSION.zip \
     && mkdir -p /var/www/about.viblo.asia \
     && unzip about.viblo.asia-$VIBLO_PLATFORM_VERSION.zip -d /var/www/about.viblo.asia \
